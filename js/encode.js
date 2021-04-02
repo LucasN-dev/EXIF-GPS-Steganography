@@ -124,7 +124,7 @@ function handleFileSelectEnc() {
     $('#coordinatesDMS').html('Coordinates in DMS: ' + coordsDMS);
     
     var coordsDMSRational = gpsIfd[piexif.GPSIFD.GPSLatitudeRef] + '; ' + gpsIfd[piexif.GPSIFD.GPSLatitude][0][0] + '/' + gpsIfd[piexif.GPSIFD.GPSLatitude][0][1] + '; ' + gpsIfd[piexif.GPSIFD.GPSLatitude][1][0] + '/' + gpsIfd[piexif.GPSIFD.GPSLatitude][1][1] + '; ' + gpsIfd[piexif.GPSIFD.GPSLatitude][2][0] + '/' + gpsIfd[piexif.GPSIFD.GPSLatitude][2][1] + ', ' + gpsIfd[piexif.GPSIFD.GPSLongitudeRef] + '; ' + gpsIfd[piexif.GPSIFD.GPSLongitude][0][0] + '/' + gpsIfd[piexif.GPSIFD.GPSLongitude][0][1] + '; ' + gpsIfd[piexif.GPSIFD.GPSLongitude][1][0] + '/' + gpsIfd[piexif.GPSIFD.GPSLongitude][1][1] + '; ' + gpsIfd[piexif.GPSIFD.GPSLongitude][2][0] + '/' + gpsIfd[piexif.GPSIFD.GPSLongitude][2][1];
-    $('#coordinatesDMSRational').html('Coordinates in DMS as divisions of rational numbers: ' + coordsDMSRational);
+    $('#coordinatesDMSRational').html('Coordinates in DMS as rational numbers: ' + coordsDMSRational);
     
 
     $('#image').hide();
