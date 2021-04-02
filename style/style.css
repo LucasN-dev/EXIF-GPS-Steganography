@@ -1,0 +1,210 @@
+* {
+  background-color: white
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-bottom: 30px;
+}
+
+#toolDesc{
+  margin-bottom: 25px;
+}
+
+#encButton {
+  background-color: white; 
+  color: #0083af;
+  border: 2px solid #0083af;
+  border-radius: 2px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#encButton:hover {
+  background-color: #0083af;
+  color: white;
+}
+
+.spacer {
+  margin-bottom: 10px;
+}
+
+#customCoordsContainer {
+  margin-top: 7px;
+  margin-left: 22px;
+  margin-right: 7px;
+  padding: 12px;
+  background-color: rgb(231, 228, 228);
+  border-radius: 3px;
+  max-width: 500px;
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+}
+
+.coordLabel {
+  margin-left: 20px;
+}
+
+.processedImage {
+  display: inline-block;
+  width: 100%;
+}
+
+.processedImageContainer {
+  max-width:100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+#coordTable {
+  margin-left: 30px;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+#customCoordsContainer td {
+  background-color: rgb(231, 228, 228);
+  padding-right: 4px;
+}
+
+#encDetailsContainer {
+  margin-top: 10px;
+}
+
+#downloadButton {
+  background-color: white; 
+  color: #0083af;
+  border: 2px solid #0083af;
+  border-radius: 2px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+#downloadButton:hover {
+  background-color: #0083af;
+  color: white;
+}
+
+.downloadContainer {
+  width:100%;
+  display: flex;
+}
+
+.spacerTop {
+  margin-top: 10px;
+}
+
+.extraSpacer {
+  margin-bottom: 20px;
+}
+
+
+/* tooltip */
+.beforeTooltip {
+  display:inline;
+  margin-right: 10px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url("../images/info.png") no-repeat;
+  background-size: 14px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  height: 80px;
+  background-color: rgb(231, 228, 228);
+  text-align: left;
+  padding: 5px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 140%;
+  left: 50%;
+  margin-left: -150px;
+  
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip:hover {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url("../images/infohover.png") no-repeat;
+  background-size: 14px;
+}
+
+input[type=text], input[type=number] {
+  padding: 2px;
+  margin-top: 2px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus, input[type=number]:focus {
+  border: 2px solid #555;
+}

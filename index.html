@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online EXIF GPS Steganography</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/piexif.js"></script>
+<script src="js/encode.js"></script>
+<script src="js/decode.js"></script>
+<link rel="icon" type="image/png" href="images/favicon.png" />
+<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+<h2>Online EXIF GPS Steganography</h2>
+<p id="toolDesc">Use this tool to encode a short message inside the EXIF GPS data of an image. Everything is processed locally within your browser.</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Encode')">Encode</button>
+  <button class="tablinks" onclick="openTab(event, 'Decode')">Decode</button>
+</div>
+
+<div id="Encode" class="tabcontent">
+  <h3>Encode</h3>
+    <form onsubmit="if (checkJpg() && checkCoord('latCust') && checkCoord('lngCust')){handleFileSelectEnc();}return false;">
+        <label class="spacer" for="message">Message to encode (2 to 16 characters, only letters, spaces, and the following characters: ?,!.): </label>
+        <input class="spacer" type="text" id="message" name="message" required minlength="2" maxlength="16" size="22" pattern="[A-Za-z \.!?,]{2,16}"><br>
+        <label class="spacer" for="file">Select a JPEG file: </label>
+        <input class="spacer" type="file" id="files" class="form" accept="image/jpeg" onchange="checkJpg();" required/>
+
+        <br><input class="spacer" type="checkbox" id="eraseData" name="eraseData"><label class="spacer" for="eraseData">Erase all other exif data</label>
+
+        <br><input class="spacer" type="checkbox" id="randomCoords" name="randomCoords" checked onchange="hideCoordsPicker()"><label class="spacer" for="randomCoords">Generate random coordinates </label>
+        <div id="customCoordsContainer" style="display: none;">
+            <div style="background-color: rgb(231, 228, 228);">Generate coordinates close to the following ones:</div>
+            <table style="background-color: rgb(231, 228, 228);" id="coordTable">
+                <tr><td>Latitude:</td><td><input style="width: 140px;" type="number" id="latCust" name="latCust" minlength="1" maxlength="17" size="15" value="34.118323"></td></tr>
+                <tr><td>Longitude:</td><td><input style="width: 140px;" type="number" id="lngCust" name="lngCust" minlength="1" maxlength="17" size="15" value="-118.300358"></td></tr>
+            </table>
+        </div>
+        <div>
+            <input id="encButton" type="submit" value="Encode" />
+        </div>
+    </form>
+    <div id="encDetailsContainer" style="display: none;">
+        <div class="spacer" id="clearMessage"></div>
+        <div class="spacer" id="encodedMessage"></div>
+        <div class="spacer" id="coordinatesDecDegrees"></div>
+        <div class="spacer" id="coordinatesDMS"></div>
+        <div class="spacer" ><div class="beforeTooltip" id="coordinatesDMSRational"></div><div class="tooltip"><span class="tooltiptext">The message is converted to decimal then attached to the image using the 4 rational integers that represent the seconds of the coordinates.</span></div></div>
+        <div class="downloadContainer">
+            <span id="imageSpan" style="display:none">Image: </span> <a id="downloadButton" href="" download="encoded.jpg" style="display:none">Download</a>
+        </div>
+        <div class="processedImageContainer" id="image"></div>
+    </div>
+</div>
+
+<div id="Decode" class="tabcontent">
+  <h3>Decode</h3>
+  Choose a JPEG: <input id="fDec" type="file" name="jpg" size="30" accept="image/jpeg" /><br>
+  
+  <div class="spacerTop" style="display:none" id="coordinatesDMSRationalDec"></div>
+  <div class="spacerTop" style="display:none" id="coordinatesDMSDec"></div>
+  <div class="spacerTop" style="display:none" id="coordinatesDecDegreesDec"></div>
+  <div class="spacerTop" style="display:none" id="encodedMessageDec"></div>
+  <div class="spacerTop extraSpacer" style="display:none" id="clearMessageDec"></div>
+  <div class="spacerTop extraSpacer" style="display:none" id="errorDec">No hidden message detected.</div>
+  
+  <div class="processedImageContainer" id="imageDec"></div>
+</div>
+
+<script>
+
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+
+        if (evt == null){
+            document.getElementsByClassName("tablinks")[0].className += " active";
+        } else {
+            evt.currentTarget.className += " active";
+        }
+    }
+
+    openTab(event, 'Encode');
+   
+
+    document.getElementById('fDec').addEventListener('change', handleFileSelectDec, false);
+
+</script>
+   
+</body>
+</html> 
