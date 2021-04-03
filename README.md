@@ -1,4 +1,4 @@
-# EXIF-GPS-Steganography
+# EXIF GPS Steganography
 
 Quick project I decided to do, the goal is to hide a message within an image using the EXIF GPS data.
 
