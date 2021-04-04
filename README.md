@@ -16,7 +16,7 @@ This tool allows the user to store a short message, using the rational numbers t
 
 The message is converted to decimal after being capitalized so that the decimal value of each character has a length of 2. It is then separated into 4 integers and these are inserted into the seconds' fields.
 
-**The tool allows the user to encode or decode a message. This is not an encryption method per se, but rather a fun way to hide a message in plain sight.**
+The tool allows the user to encode or decode a message. **This is not an encryption method per se, but rather a fun way to hide a message in plain sight.**
 
 ### Encoding process example:
  - Original message: GITHUB DEMO
