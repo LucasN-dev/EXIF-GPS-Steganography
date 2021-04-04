@@ -1,6 +1,5 @@
 function checkCoord(id) {
     var coord = document.getElementById(id).value;
-    console.log(coord);
 
     const regexLat = new RegExp('lat');
     const regexLng = new RegExp('lng');
@@ -66,14 +65,6 @@ function handleFileSelectEnc() {
     var thirdpart = message.substr(2*splitterIndex, splitterIndex);
     var fourthpart = message.substr(3*splitterIndex);
 
-    console.log(message.length + ' ' + splitterIndex + ' ' + 2*splitterIndex)
-
-    console.log("Message: " + message);
-    console.log("first: " + firstpart);
-    console.log("sec: " + secondpart);
-    console.log("third: " + thirdpart);
-    console.log("fourth: " + fourthpart);
-
     // generate random coords
     var lat = Math.random() * (180) - 90;
     var lng = Math.random() * (180) - 90;
@@ -82,9 +73,6 @@ function handleFileSelectEnc() {
         lat = document.getElementById('latCust').value;
         lng = document.getElementById('lngCust').value;
     }
-
-    console.log(lat);
-    console.log(lng);
     
     var gpsIfd = {};
     gpsIfd[piexif.GPSIFD.GPSLatitudeRef] = lat < 0 ? 'S' : 'N';
@@ -99,11 +87,6 @@ function handleFileSelectEnc() {
     //lng seconds
     gpsIfd[piexif.GPSIFD.GPSLongitude][2][0] = parseInt(thirdpart,10);
     gpsIfd[piexif.GPSIFD.GPSLongitude][2][1] = parseInt(fourthpart,10);
-
-    
-
-    console.log(gpsIfd[piexif.GPSIFD.GPSLatitude])
-    console.log(gpsIfd[piexif.GPSIFD.GPSLongitude])
 
     var f = document.getElementById('files').files[0]; // FileList object
     if (!f.type.match('image/jpeg.*')) {
@@ -133,8 +116,6 @@ function handleFileSelectEnc() {
     var reader = new FileReader();
     reader.onloadend = function(e) {
         var origin = piexif.load(e.target.result);
-        console.log("original:");
-        console.log(origin);
 
         var exifBytes = {};
 

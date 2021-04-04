@@ -8,7 +8,6 @@ function printExif(dataURL) {
 
   var exif = piexif.load(dataURL);
   var gpsIfd = exif["GPS"];
-  console.log(jQuery.isEmptyObject(gpsIfd));
   
   if (!(jQuery.isEmptyObject(gpsIfd))) {
 
@@ -45,12 +44,6 @@ function printExif(dataURL) {
       $('#encodedMessageDec').hide();
       $('#clearMessageDec').hide();
   }
-
-  
-  
-  
-  
-  
 
   originalImg.onload = function () {
     $('#imageDec').html(originalImg);
