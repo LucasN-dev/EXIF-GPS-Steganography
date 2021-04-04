@@ -230,3 +230,7 @@ input[type=text]:focus, input[type=number]:focus {
   cursor: pointer;
   text-decoration: underline;
 }
+
+.fontFixMobile {
+  font-size: 1em;
+}

@@ -42,13 +42,13 @@
         </div>
     </form>
     <div id="encDetailsContainer" style="display: none;">
-        <div class="spacer" id="clearMessage"></div>
-        <div class="spacer" id="encodedMessage"></div>
-        <div class="spacer" id="coordinatesDecDegrees"></div>
-        <div class="spacer" id="coordinatesDMS"></div>
-        <div class="spacer" ><div class="beforeTooltip" id="coordinatesDMSRational"></div><div class="tooltip"><span class="tooltiptext">The message is converted to decimal then attached to the image using the 2 rational numbers that represent the seconds of the coordinates.</span></div></div>
+        <div class="spacer fontFixMobile" id="clearMessage"></div>
+        <div class="spacer fontFixMobile" id="encodedMessage"></div>
+        <div class="spacer fontFixMobile" id="coordinatesDecDegrees"></div>
+        <div class="spacer fontFixMobile" id="coordinatesDMS"></div>
+        <div class="spacer fontFixMobile" ><div class="beforeTooltip" id="coordinatesDMSRational"></div><div class="tooltip"><span class="tooltiptext">The message is converted to decimal then attached to the image using the 2 rational numbers that represent the seconds of the coordinates.</span></div></div>
         <div class="downloadContainer">
-            <span id="imageSpan" style="display:none">Image: </span> <a id="downloadButton" href="" download="encoded.jpg" style="display:none">Download</a>
+            <span id="imageSpan" class="fontFixMobile" style="display:none">Image: </span> <a id="downloadButton" href="" download="encoded.jpg" style="display:none">Download</a>
         </div>
         <div class="processedImageContainer" id="image"></div>
     </div>
@@ -58,12 +58,12 @@
   <h3>Decode</h3>
   Choose a JPEG: <input id="fDec" type="file" name="jpg" size="30" accept="image/jpeg" /><br>
   
-  <div class="spacerTop" style="display:none" id="coordinatesDMSRationalDec"></div>
-  <div class="spacerTop" style="display:none" id="coordinatesDMSDec"></div>
-  <div class="spacerTop" style="display:none" id="coordinatesDecDegreesDec"></div>
-  <div class="spacerTop" style="display:none" id="encodedMessageDec"></div>
-  <div class="spacerTop extraSpacer" style="display:none" id="clearMessageDec"></div>
-  <div class="spacerTop extraSpacer" style="display:none" id="errorDec">No hidden message detected.</div>
+  <div class="spacerTop fontFixMobile" style="display:none" id="coordinatesDMSRationalDec"></div>
+  <div class="spacerTop fontFixMobile" style="display:none" id="coordinatesDMSDec"></div>
+  <div class="spacerTop fontFixMobile" style="display:none" id="coordinatesDecDegreesDec"></div>
+  <div class="spacerTop fontFixMobile" style="display:none" id="encodedMessageDec"></div>
+  <div class="spacerTop extraSpacer fontFixMobile" style="display:none" id="clearMessageDec"></div>
+  <div class="spacerTop extraSpacer fontFixMobile" style="display:none" id="errorDec">No hidden message detected.</div>
   
   <div class="processedImageContainer" id="imageDec"></div>
 </div>
