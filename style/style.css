@@ -1,5 +1,6 @@
 * {
   background-color: white;
+  text-size-adjust: none;
 }
 
 body {
@@ -229,8 +230,4 @@ input[type=text]:focus, input[type=number]:focus {
 .githubLink:hover {
   cursor: pointer;
   text-decoration: underline;
-}
-
-.fontFixMobile {
-  font-size: 1em;
 }
