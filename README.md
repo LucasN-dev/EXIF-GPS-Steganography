@@ -16,7 +16,16 @@ This tool allows the user to store a short message, using the rational numbers t
 
 The message is converted to decimal after being capitalized so that the decimal value of each character has a length of 2. It is then separated into 4 integers and these are inserted into the seconds' fields.
 
-The tool allows the user to encode or decode a message. This is not an encryption method per se, but rather a fun way to hide a message in plain sight.
+**The tool allows the user to encode or decode a message. This is not an encryption method per se, but rather a fun way to hide a message in plain sight.**
+
+### Encoding process example:
+ - Original message: GITHUB DEMO
+ - Message encoded in decimals: 7173847285663268697779
+ - Coordinates stored within the image: N; 28/1; 22/1; 71738/47285, E; 64/1; 42/1; 66326/8697779
+ 
+Using this example, the coordinates will most likely be displayed in one of the following formats by an image viewer or dedicated tool:
+ - 28.36708809465064, 64.70000211822914
+ - N; 28; 22; 1.5171407423072856, E; 64; 42; 0.007625624886537126
 
 ## Dependencies
 
