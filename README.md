@@ -1,6 +1,6 @@
 # EXIF GPS Steganography
 
-Quick project I decided to do, the goal is to hide a message within an image using the EXIF GPS data.
+Quick project I decided to do, the goal is to hide a message within an image using the EXIF GPS data. You can test it out [here](https://lucasn-dev.github.io/EXIF-GPS-Steganography).
 
 ## How does it work?
 
