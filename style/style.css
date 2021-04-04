@@ -208,3 +208,25 @@ input[type=text], input[type=number] {
 input[type=text]:focus, input[type=number]:focus {
   border: 2px solid #555;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 8px 0;
+  width: 100%;
+  background-color: #ccc;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.githubLink {
+  text-decoration: none;
+  background-color: #ccc;
+  color: #337ab7;
+}
+
+.githubLink:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
