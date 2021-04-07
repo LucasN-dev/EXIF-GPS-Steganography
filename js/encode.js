@@ -38,6 +38,7 @@ function checkJpg() {
 }
 
 function messageToDec(clearMessage) {
+    // convert the message to decimal
     clearMessage = clearMessage.toUpperCase();
     var decMessage = "";
     for (let i = 0; i < clearMessage.length; i++) {
@@ -56,9 +57,12 @@ function hideCoordsPicker() {
 }
 
 function handleFileSelectEnc() {
+    // function to encode the message into the image
 
+    // converting the message into decimal
     var message = messageToDec(document.getElementById('message').value);
 
+    // splitting it into 4 parts
     var splitterIndex = Math.floor(message.length/4);
     var firstpart = message.substr(0, splitterIndex);
     var secondpart = message.substr(splitterIndex, splitterIndex);
@@ -74,17 +78,19 @@ function handleFileSelectEnc() {
         lng = document.getElementById('lngCust').value;
     }
     
+    // converting the coords to DMS
     var gpsIfd = {};
     gpsIfd[piexif.GPSIFD.GPSLatitudeRef] = lat < 0 ? 'S' : 'N';
     gpsIfd[piexif.GPSIFD.GPSLatitude] = piexif.GPSHelper.degToDmsRational(lat);
     gpsIfd[piexif.GPSIFD.GPSLongitudeRef] = lng < 0 ? 'W' : 'E';
     gpsIfd[piexif.GPSIFD.GPSLongitude] = piexif.GPSHelper.degToDmsRational(lng);
 
+    // hiding the message in the seconds of the coords
     // lat seconds
     gpsIfd[piexif.GPSIFD.GPSLatitude][2][0] = parseInt(firstpart,10);
     gpsIfd[piexif.GPSIFD.GPSLatitude][2][1] = parseInt(secondpart,10);
 
-    //lng seconds
+    // lng seconds
     gpsIfd[piexif.GPSIFD.GPSLongitude][2][0] = parseInt(thirdpart,10);
     gpsIfd[piexif.GPSIFD.GPSLongitude][2][1] = parseInt(fourthpart,10);
 
