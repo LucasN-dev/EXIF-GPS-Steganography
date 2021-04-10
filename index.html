@@ -22,8 +22,8 @@
 <div id="Encode" class="tabcontent">
   <h3>Encode</h3>
     <form onsubmit="if (checkJpg() && checkCoord('latCust') && checkCoord('lngCust')){handleFileSelectEnc();}return false;">
-        <label class="spacer" for="message">Message to encode (2 to 16 characters, only letters, spaces, and the following characters: ?,!.): </label>
-        <input class="spacer" type="text" id="message" name="message" required minlength="2" maxlength="16" size="22" pattern="[A-Za-z \.!?,]{2,16}"><br>
+        <label class="spacer" for="message">Message to encode (2 to 16 characters, only letters, numbers, spaces, and the following characters: ?,!.): </label>
+        <input class="spacer" type="text" id="message" name="message" required minlength="2" maxlength="16" size="22" pattern="[0-9A-Za-z \.!?,]{2,16}"><br>
         <label class="spacer" for="file">Select a JPEG file: </label>
         <input class="spacer" type="file" id="files" class="form" accept="image/jpeg" onchange="checkJpg();" required/>
 
